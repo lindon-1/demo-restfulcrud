@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.Mapper.EmpMapper">
+    <resultMap id="EmpMapper" type="com.example.demo.entities.Employee">
+        <id column="id" property="id" javaType="int"></id>
+        <result column="name" property="name" javaType="String"></result>
+        <result column="email" property="email" javaType="String"></result>
+        <result column="gender" property="gender" javaType="int"></result>
+        <result column="bmid" property="departmentId" javaType="int"></result>
+        <result column="birth" property="birth" javaType="date"></result>
+
+
+    </resultMap>
+    <insert id="add" parameterType="com.example.demo.entities.Employee">
+       INSERT INTO emp(`name`, `email`, `gender`, `bmid`, `birth`) VALUES (#{name}, #{email},#{gender}, #{departmentId}, #{birth});
+
+    </insert>
+    
+    <insert id="addAll" parameterType="java.util.List">
+        insert into emp(`name`, `email`, `gender`, `bmid`, `birth`) values 
+        <foreach collection="list" index="index" item="employee" separator=",">
+            (#{employee.name},#{employee.email},#{employee.gender},#{employee.departmentId},#{employee.birth})
+        </foreach>
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.Integer" >
+        delete from emp where id = #{id}
+    </delete>
+
+    <delete id="deleteByBmId" parameterType="java.lang.Integer" >
+        delete from emp where bmid = #{bmid}
+    </delete>
+
+    <update id="update" parameterType="com.example.demo.entities.Employee">
+        update emp set name = #{name},email = #{email},gender = #{gender},bmid = #{departmentId},
+         birth = #{birth} where id = #{id}
+    </update>
+
+    <select id="selectAll"  resultMap="EmpMapper">
+        select * from emp
+    </select>
+
+    <select id="selectById" resultMap="EmpMapper">
+        select * from emp where id = #{id}
+    </select>
+
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*) from emp group by bmid order by bmid
+    </select>
+
+    <select id="getBmid" resultType="java.lang.Integer">
+        select distinct bmid from emp order by bmid;
+    </select>
+
+    <select id="searchByName" resultMap="EmpMapper">
+         select * from emp where name like #{name}
+    </select>
+
+    <select id="searchByBmid" resultMap="EmpMapper">
+        select * from emp where bmid = #{departmentId}
+    </select>
+
+    <select id="checkEmail" parameterType="java.lang.String" resultMap="EmpMapper">
+        select * from emp where email = #{email}
+    </select>
+    
+
+
+
+
+
+</mapper>

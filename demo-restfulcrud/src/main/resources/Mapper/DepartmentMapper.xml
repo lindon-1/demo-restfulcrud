@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.Mapper.DepartmentMapper">
+    <resultMap id="DepartmentMapper" type="com.example.demo.entities.Department">
+        <id column="id" property="id" javaType="int"></id>
+        <result column="bmbh" property="departmentId" javaType="String"></result>
+        <result column="bmmc" property="departmentName" javaType="String"></result>
+
+    </resultMap>
+    <insert id="add" parameterType="com.example.demo.entities.Department">
+       insert into bmb(bmbh,bmmc) values(#{departmentId},#{departmentName})
+    </insert>
+
+    <delete id="delete" parameterType="java.lang.String" >
+        delete from bmb where bmbh = #{bmbh}
+    </delete>
+
+    <update id="update" parameterType="com.example.demo.entities.Department">
+        update bmb set bmbh =#{departmentId},bmmc = #{departmentName} where id = #{id}
+    </update>
+
+    <select id="selectAll"  resultMap="DepartmentMapper">
+        select * from bmb
+    </select>
+
+    <select id="selectByDepartmentId" resultMap="DepartmentMapper">
+        select * from bmb where bmbh = #{bmbh}
+    </select>
+    <select id="selectByDepartmentIds" resultMap="DepartmentMapper">
+        select * from bmb where id in
+        <foreach collection="departmentIds" close=")" open="(" item="departmentId" index="index" separator="," >
+            #{departmentId}
+        </foreach>
+    </select>
+
+
+    <select id="getBmmc" resultType="java.lang.String">
+        select bmmc from bmb
+    </select>
+
+    <select id="checkDepart" parameterType="com.example.demo.entities.Department" resultMap="DepartmentMapper">
+        select * from bmb where bmbh = #{departmentId} or bmmc = #{departmentName}
+    </select>
+
+    <select id="selectById" resultMap="DepartmentMapper">
+        select * from bmb where id = #{id}
+    </select>
+
+    <select id="searchIdByName" resultType="java.lang.Integer">
+        select id from bmb where bmmc = #{departmentName}
+    </select>
+
+
+
+
+</mapper>

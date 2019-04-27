@@ -1,0 +1,264 @@
+Starting DemoRestfulcrudApplication on DESKTOP-A26SOU2 with PID 12900 (E:\Code\demo-restfulcrud\target\classes started by Lindonglin in E:\Code\demo-restfulcrud)
+No active profile set, falling back to default profiles: default
+Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@619713e5: startup date [Sat Mar 23 09:08:43 CST 2019]; root of context hierarchy
+Tomcat initialized with port(s): 8080 (http)
+Initializing ProtocolHandler ["http-nio-8080"]
+Starting service [Tomcat]
+Starting Servlet Engine: Apache Tomcat/8.5.31
+The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\jdk1.8.0_144\bin;D:\sqlserver2008r2\100\Tools\Binn\;D:\sqlserver2008\100\Tools\Binn\;D:\sqlserver2008\100\DTS\Binn\;D:\sqlserver2008r2\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;D:\sqlserver2008r2\100\DTS\Binn\;E:\apache-maven-3.2.1\bin;D:\Program Files\Java\jdk1.7.0_60\bin;E:\sofe\android-sdk_r24.4.1-windows\android-sdk-windows\platform-tools;E:\sofe\android-sdk_r24.4.1-windows\android-sdk-windows\tools;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\SVN\VisualSVN Server\bin;D:\Subversion\bin;D:\mysql-5.7.23-winx64\bin;C:\WINDOWS\System32\OpenSSH\;D:\Oracle9i\ora92\bin\;D:\TortoiseSVN\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Python2.7;D:\apache-storm-1.1.0\apache-storm-1.1.0\bin;D:\Python2.7\Scripts;D:\Python2.7\Lib\site-packages\;D:\Zookeeper-3.5.1\zookeeper-3.5.1-alpha\bin;D:\Git\cmd;D:\TortoiseGit\bin;C:\Users\Lindonglin\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 4420 ms
+Servlet dispatcherServlet mapped to [/]
+Mapping filter: 'characterEncodingFilter' to: [/*]
+Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Mapping filter: 'requestContextFilter' to: [/*]
+Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@619713e5: startup date [Sat Mar 23 09:08:43 CST 2019]; root of context hierarchy
+Mapped "{[/importEmp]}" onto public void com.example.demo.Controller.DataController.importEmp(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+Mapped "{[/importAndExport]}" onto public java.lang.String com.example.demo.Controller.DataController.turnToHtml(org.springframework.ui.Model)
+Mapped "{[/exportEmp]}" onto public void com.example.demo.Controller.DataController.exportEmp(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String)
+Mapped "{[/depart],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.add(com.example.demo.entities.Department)
+Mapped "{[/depart],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.update(com.example.demo.entities.Department)
+Mapped "{[/depart/{departmentId}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.delete(java.lang.String)
+Mapped "{[/departs],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.list(org.springframework.ui.Model)
+Mapped "{[/depart/count]}" onto public java.util.Map<java.lang.String, java.util.List> com.example.demo.Controller.DepartmentController.getCount()
+Mapped "{[/depart/{departmentId}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.updateView(java.lang.String,org.springframework.ui.Model)
+Mapped "{[/checkDepart],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.DepartmentController.checkDepart(java.lang.String,java.lang.String)
+Mapped "{[/emps],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.list(org.springframework.ui.Model,java.lang.Integer)
+Mapped "{[/empByName],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.getByName(java.lang.String,org.springframework.ui.Model)
+Mapped "{[/emp/{id}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.toEditPage(java.lang.Integer,org.springframework.ui.Model)
+Mapped "{[/emp],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.toaddPage(org.springframework.ui.Model)
+Mapped "{[/emp],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.addEmp(com.example.demo.entities.Employee)
+Mapped "{[/emp/{id}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.deleteEmp(java.lang.Integer)
+Mapped "{[/emp],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.updateEmp(com.example.demo.entities.Employee)
+Mapped "{[/checkEmail],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.EmployeeController.checkEmial(java.lang.String)
+Mapped "{[/success]}" onto public java.lang.String com.example.demo.Controller.HelloController.success(java.util.Map<java.lang.String, java.lang.Object>)
+Mapped "{[/hello]}" onto public java.lang.String com.example.demo.Controller.HelloController.hello()
+Mapped "{[/user],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.loginController.update(com.example.demo.entities.User)
+Mapped "{[/user/{id}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.loginController.delete(java.lang.Integer)
+Mapped "{[/user/{id}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.loginController.updateView(java.lang.Integer,org.springframework.ui.Model)
+Mapped "{[/user/loginout]}" onto public java.lang.String com.example.demo.Controller.loginController.loginout(javax.servlet.http.HttpSession)
+Mapped "{[/users]}" onto public java.lang.String com.example.demo.Controller.loginController.userManger(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.loginController.login(java.lang.String,java.lang.String,java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpSession)
+Mapped "{[/checkUser],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.loginController.checkUser(java.lang.String,java.lang.String)
+Mapped "{[/user],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.loginController.userAdd(com.example.demo.entities.User)
+Mapped "{[/user],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.loginController.addView()
+Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+Mapped URL path [/crud] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/index.html] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/main.html] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Adding welcome page: class path resource [public/index.html]
+Registering beans for JMX exposure on startup
+Bean with name 'dataSource' has been autodetected for JMX exposure
+Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+Starting ProtocolHandler ["http-nio-8080"]
+Using a shared selector for servlet write/read
+Tomcat started on port(s): 8080 (http) with context path '/crud'
+Started DemoRestfulcrudApplication in 8.81 seconds (JVM running for 15.357)
+Initializing Spring FrameworkServlet 'dispatcherServlet'
+FrameworkServlet 'dispatcherServlet': initialization started
+FrameworkServlet 'dispatcherServlet': initialization completed in 30 ms
+{dataSource-1} inited
+Starting DemoRestfulcrudApplication on DESKTOP-A26SOU2 with PID 12216 (E:\Code\demo-restfulcrud\target\classes started by Lindonglin in E:\Code\demo-restfulcrud)
+No active profile set, falling back to default profiles: default
+Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@dbf57b3: startup date [Sat Mar 23 09:12:26 CST 2019]; root of context hierarchy
+Tomcat initialized with port(s): 8080 (http)
+Initializing ProtocolHandler ["http-nio-8080"]
+Starting service [Tomcat]
+Starting Servlet Engine: Apache Tomcat/8.5.31
+The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\jdk1.8.0_144\bin;D:\sqlserver2008r2\100\Tools\Binn\;D:\sqlserver2008\100\Tools\Binn\;D:\sqlserver2008\100\DTS\Binn\;D:\sqlserver2008r2\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;D:\sqlserver2008r2\100\DTS\Binn\;E:\apache-maven-3.2.1\bin;D:\Program Files\Java\jdk1.7.0_60\bin;E:\sofe\android-sdk_r24.4.1-windows\android-sdk-windows\platform-tools;E:\sofe\android-sdk_r24.4.1-windows\android-sdk-windows\tools;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\SVN\VisualSVN Server\bin;D:\Subversion\bin;D:\mysql-5.7.23-winx64\bin;C:\WINDOWS\System32\OpenSSH\;D:\Oracle9i\ora92\bin\;D:\TortoiseSVN\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Python2.7;D:\apache-storm-1.1.0\apache-storm-1.1.0\bin;D:\Python2.7\Scripts;D:\Python2.7\Lib\site-packages\;D:\Zookeeper-3.5.1\zookeeper-3.5.1-alpha\bin;D:\Git\cmd;D:\TortoiseGit\bin;C:\Users\Lindonglin\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 1430 ms
+Servlet dispatcherServlet mapped to [/]
+Mapping filter: 'characterEncodingFilter' to: [/*]
+Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Mapping filter: 'requestContextFilter' to: [/*]
+Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@dbf57b3: startup date [Sat Mar 23 09:12:26 CST 2019]; root of context hierarchy
+Mapped "{[/importAndExport]}" onto public java.lang.String com.example.demo.Controller.DataController.turnToHtml(org.springframework.ui.Model)
+Mapped "{[/importEmp]}" onto public void com.example.demo.Controller.DataController.importEmp(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+Mapped "{[/exportEmp]}" onto public void com.example.demo.Controller.DataController.exportEmp(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String)
+Mapped "{[/depart],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.add(com.example.demo.entities.Department)
+Mapped "{[/depart],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.update(com.example.demo.entities.Department)
+Mapped "{[/depart/{departmentId}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.delete(java.lang.String)
+Mapped "{[/departs],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.list(org.springframework.ui.Model)
+Mapped "{[/depart/count]}" onto public java.util.Map<java.lang.String, java.util.List> com.example.demo.Controller.DepartmentController.getCount()
+Mapped "{[/depart/{departmentId}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.updateView(java.lang.String,org.springframework.ui.Model)
+Mapped "{[/checkDepart],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.DepartmentController.checkDepart(java.lang.String,java.lang.String)
+Mapped "{[/emps],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.list(org.springframework.ui.Model,java.lang.Integer)
+Mapped "{[/empByName],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.getByName(java.lang.String,org.springframework.ui.Model)
+Mapped "{[/emp],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.toaddPage(org.springframework.ui.Model)
+Mapped "{[/emp],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.addEmp(com.example.demo.entities.Employee)
+Mapped "{[/emp],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.updateEmp(com.example.demo.entities.Employee)
+Mapped "{[/emp/{id}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.deleteEmp(java.lang.Integer)
+Mapped "{[/emp/{id}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.toEditPage(java.lang.Integer,org.springframework.ui.Model)
+Mapped "{[/checkEmail],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.EmployeeController.checkEmial(java.lang.String)
+Mapped "{[/success]}" onto public java.lang.String com.example.demo.Controller.HelloController.success(java.util.Map<java.lang.String, java.lang.Object>)
+Mapped "{[/hello]}" onto public java.lang.String com.example.demo.Controller.HelloController.hello()
+Mapped "{[/user],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.loginController.update(com.example.demo.entities.User)
+Mapped "{[/user/{id}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.loginController.delete(java.lang.Integer)
+Mapped "{[/user/{id}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.loginController.updateView(java.lang.Integer,org.springframework.ui.Model)
+Mapped "{[/user],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.loginController.userAdd(com.example.demo.entities.User)
+Mapped "{[/user],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.loginController.addView()
+Mapped "{[/users]}" onto public java.lang.String com.example.demo.Controller.loginController.userManger(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.loginController.login(java.lang.String,java.lang.String,java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpSession)
+Mapped "{[/checkUser],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.loginController.checkUser(java.lang.String,java.lang.String)
+Mapped "{[/user/loginout]}" onto public java.lang.String com.example.demo.Controller.loginController.loginout(javax.servlet.http.HttpSession)
+Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+Mapped URL path [/crud] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/index.html] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/main.html] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Adding welcome page: class path resource [public/index.html]
+Registering beans for JMX exposure on startup
+Bean with name 'dataSource' has been autodetected for JMX exposure
+Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+Starting ProtocolHandler ["http-nio-8080"]
+Using a shared selector for servlet write/read
+Tomcat started on port(s): 8080 (http) with context path '/crud'
+Started DemoRestfulcrudApplication in 3.31 seconds (JVM running for 4.645)
+Initializing Spring FrameworkServlet 'dispatcherServlet'
+FrameworkServlet 'dispatcherServlet': initialization started
+FrameworkServlet 'dispatcherServlet': initialization completed in 18 ms
+{dataSource-1} inited
+Starting DemoRestfulcrudApplication on DESKTOP-A26SOU2 with PID 22812 (E:\Code\demo-restfulcrud\target\classes started by Lindonglin in E:\Code\demo-restfulcrud)
+No active profile set, falling back to default profiles: default
+Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@619713e5: startup date [Sat Mar 23 09:16:35 CST 2019]; root of context hierarchy
+Tomcat initialized with port(s): 8080 (http)
+Initializing ProtocolHandler ["http-nio-8080"]
+Starting service [Tomcat]
+Starting Servlet Engine: Apache Tomcat/8.5.31
+The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\jdk1.8.0_144\bin;D:\sqlserver2008r2\100\Tools\Binn\;D:\sqlserver2008\100\Tools\Binn\;D:\sqlserver2008\100\DTS\Binn\;D:\sqlserver2008r2\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;D:\sqlserver2008r2\100\DTS\Binn\;E:\apache-maven-3.2.1\bin;D:\Program Files\Java\jdk1.7.0_60\bin;E:\sofe\android-sdk_r24.4.1-windows\android-sdk-windows\platform-tools;E:\sofe\android-sdk_r24.4.1-windows\android-sdk-windows\tools;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\SVN\VisualSVN Server\bin;D:\Subversion\bin;D:\mysql-5.7.23-winx64\bin;C:\WINDOWS\System32\OpenSSH\;D:\Oracle9i\ora92\bin\;D:\TortoiseSVN\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Python2.7;D:\apache-storm-1.1.0\apache-storm-1.1.0\bin;D:\Python2.7\Scripts;D:\Python2.7\Lib\site-packages\;D:\Zookeeper-3.5.1\zookeeper-3.5.1-alpha\bin;D:\Git\cmd;D:\TortoiseGit\bin;C:\Users\Lindonglin\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 1290 ms
+Servlet dispatcherServlet mapped to [/]
+Mapping filter: 'characterEncodingFilter' to: [/*]
+Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Mapping filter: 'requestContextFilter' to: [/*]
+Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@619713e5: startup date [Sat Mar 23 09:16:35 CST 2019]; root of context hierarchy
+Mapped "{[/importAndExport]}" onto public java.lang.String com.example.demo.Controller.DataController.turnToHtml(org.springframework.ui.Model)
+Mapped "{[/importEmp]}" onto public void com.example.demo.Controller.DataController.importEmp(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+Mapped "{[/exportEmp]}" onto public void com.example.demo.Controller.DataController.exportEmp(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String)
+Mapped "{[/depart],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.add(com.example.demo.entities.Department)
+Mapped "{[/depart],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.update(com.example.demo.entities.Department)
+Mapped "{[/depart/{departmentId}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.delete(java.lang.String)
+Mapped "{[/departs],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.list(org.springframework.ui.Model)
+Mapped "{[/depart/count]}" onto public java.util.Map<java.lang.String, java.util.List> com.example.demo.Controller.DepartmentController.getCount()
+Mapped "{[/checkDepart],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.DepartmentController.checkDepart(java.lang.String,java.lang.String)
+Mapped "{[/depart/{departmentId}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.updateView(java.lang.String,org.springframework.ui.Model)
+Mapped "{[/emps],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.list(org.springframework.ui.Model,java.lang.Integer)
+Mapped "{[/empByName],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.getByName(java.lang.String,org.springframework.ui.Model)
+Mapped "{[/emp/{id}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.toEditPage(java.lang.Integer,org.springframework.ui.Model)
+Mapped "{[/emp/{id}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.deleteEmp(java.lang.Integer)
+Mapped "{[/emp],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.toaddPage(org.springframework.ui.Model)
+Mapped "{[/emp],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.addEmp(com.example.demo.entities.Employee)
+Mapped "{[/emp],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.updateEmp(com.example.demo.entities.Employee)
+Mapped "{[/checkEmail],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.EmployeeController.checkEmial(java.lang.String)
+Mapped "{[/success]}" onto public java.lang.String com.example.demo.Controller.HelloController.success(java.util.Map<java.lang.String, java.lang.Object>)
+Mapped "{[/hello]}" onto public java.lang.String com.example.demo.Controller.HelloController.hello()
+Mapped "{[/user],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.loginController.update(com.example.demo.entities.User)
+Mapped "{[/user/{id}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.loginController.delete(java.lang.Integer)
+Mapped "{[/user/loginout]}" onto public java.lang.String com.example.demo.Controller.loginController.loginout(javax.servlet.http.HttpSession)
+Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.loginController.login(java.lang.String,java.lang.String,java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpSession)
+Mapped "{[/user/{id}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.loginController.updateView(java.lang.Integer,org.springframework.ui.Model)
+Mapped "{[/user],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.loginController.userAdd(com.example.demo.entities.User)
+Mapped "{[/user],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.loginController.addView()
+Mapped "{[/checkUser],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.loginController.checkUser(java.lang.String,java.lang.String)
+Mapped "{[/users]}" onto public java.lang.String com.example.demo.Controller.loginController.userManger(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+Mapped URL path [/crud] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/index.html] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/main.html] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Adding welcome page: class path resource [public/index.html]
+Registering beans for JMX exposure on startup
+Bean with name 'dataSource' has been autodetected for JMX exposure
+Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+Starting ProtocolHandler ["http-nio-8080"]
+Using a shared selector for servlet write/read
+Tomcat started on port(s): 8080 (http) with context path '/crud'
+Started DemoRestfulcrudApplication in 2.93 seconds (JVM running for 4.249)
+Initializing Spring FrameworkServlet 'dispatcherServlet'
+FrameworkServlet 'dispatcherServlet': initialization started
+FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+{dataSource-1} inited
+Starting DemoRestfulcrudApplication on DESKTOP-A26SOU2 with PID 15704 (E:\Code\demo-restfulcrud\target\classes started by Lindonglin in E:\Code\demo-restfulcrud)
+No active profile set, falling back to default profiles: default
+Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6a192cfe: startup date [Sat Mar 23 09:55:13 CST 2019]; root of context hierarchy
+Tomcat initialized with port(s): 8080 (http)
+Initializing ProtocolHandler ["http-nio-8080"]
+Starting service [Tomcat]
+Starting Servlet Engine: Apache Tomcat/8.5.31
+The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [D:\jdk1.8.0_144\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\jdk1.8.0_144\bin;D:\sqlserver2008r2\100\Tools\Binn\;D:\sqlserver2008\100\Tools\Binn\;D:\sqlserver2008\100\DTS\Binn\;D:\sqlserver2008r2\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;D:\sqlserver2008r2\100\DTS\Binn\;E:\apache-maven-3.2.1\bin;D:\Program Files\Java\jdk1.7.0_60\bin;E:\sofe\android-sdk_r24.4.1-windows\android-sdk-windows\platform-tools;E:\sofe\android-sdk_r24.4.1-windows\android-sdk-windows\tools;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;D:\SVN\VisualSVN Server\bin;D:\Subversion\bin;D:\mysql-5.7.23-winx64\bin;C:\WINDOWS\System32\OpenSSH\;D:\Oracle9i\ora92\bin\;D:\TortoiseSVN\bin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;D:\Python2.7;D:\apache-storm-1.1.0\apache-storm-1.1.0\bin;D:\Python2.7\Scripts;D:\Python2.7\Lib\site-packages\;D:\Zookeeper-3.5.1\zookeeper-3.5.1-alpha\bin;D:\Git\cmd;D:\TortoiseGit\bin;C:\Users\Lindonglin\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;.]
+Initializing Spring embedded WebApplicationContext
+Root WebApplicationContext: initialization completed in 1505 ms
+Servlet dispatcherServlet mapped to [/]
+Mapping filter: 'characterEncodingFilter' to: [/*]
+Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+Mapping filter: 'httpPutFormContentFilter' to: [/*]
+Mapping filter: 'requestContextFilter' to: [/*]
+Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6a192cfe: startup date [Sat Mar 23 09:55:13 CST 2019]; root of context hierarchy
+Mapped "{[/exportEmp]}" onto public void com.example.demo.Controller.DataController.exportEmp(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String)
+Mapped "{[/importEmp]}" onto public void com.example.demo.Controller.DataController.importEmp(org.springframework.web.multipart.MultipartFile,javax.servlet.http.HttpServletRequest,org.springframework.ui.Model)
+Mapped "{[/importAndExport]}" onto public java.lang.String com.example.demo.Controller.DataController.turnToHtml(org.springframework.ui.Model)
+Mapped "{[/depart],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.add(com.example.demo.entities.Department)
+Mapped "{[/depart],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.update(com.example.demo.entities.Department)
+Mapped "{[/depart/{departmentId}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.delete(java.lang.String)
+Mapped "{[/departs],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.list(org.springframework.ui.Model)
+Mapped "{[/depart/count]}" onto public java.util.Map<java.lang.String, java.util.List> com.example.demo.Controller.DepartmentController.getCount()
+Mapped "{[/depart/{departmentId}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.DepartmentController.updateView(java.lang.String,org.springframework.ui.Model)
+Mapped "{[/checkDepart],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.DepartmentController.checkDepart(java.lang.String,java.lang.String)
+Mapped "{[/emps],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.list(org.springframework.ui.Model,java.lang.Integer)
+Mapped "{[/empByName],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.getByName(java.lang.String,org.springframework.ui.Model)
+Mapped "{[/checkEmail],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.EmployeeController.checkEmial(java.lang.String)
+Mapped "{[/emp],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.updateEmp(com.example.demo.entities.Employee)
+Mapped "{[/emp],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.toaddPage(org.springframework.ui.Model)
+Mapped "{[/emp/{id}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.deleteEmp(java.lang.Integer)
+Mapped "{[/emp],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.addEmp(com.example.demo.entities.Employee)
+Mapped "{[/emp/{id}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.EmployeeController.toEditPage(java.lang.Integer,org.springframework.ui.Model)
+Mapped "{[/success]}" onto public java.lang.String com.example.demo.Controller.HelloController.success(java.util.Map<java.lang.String, java.lang.Object>)
+Mapped "{[/hello]}" onto public java.lang.String com.example.demo.Controller.HelloController.hello()
+Mapped "{[/user],methods=[PUT]}" onto public java.lang.String com.example.demo.Controller.loginController.update(com.example.demo.entities.User)
+Mapped "{[/user/{id}],methods=[DELETE]}" onto public java.lang.String com.example.demo.Controller.loginController.delete(java.lang.Integer)
+Mapped "{[/user],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.loginController.addView()
+Mapped "{[/checkUser],methods=[GET]}" onto public java.util.Map<java.lang.String, java.lang.Boolean> com.example.demo.Controller.loginController.checkUser(java.lang.String,java.lang.String)
+Mapped "{[/users]}" onto public java.lang.String com.example.demo.Controller.loginController.userManger(javax.servlet.http.HttpSession,org.springframework.ui.Model)
+Mapped "{[/user/login],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.loginController.login(java.lang.String,java.lang.String,java.util.Map<java.lang.String, java.lang.Object>,javax.servlet.http.HttpSession)
+Mapped "{[/user/loginout]}" onto public java.lang.String com.example.demo.Controller.loginController.loginout(javax.servlet.http.HttpSession)
+Mapped "{[/user],methods=[POST]}" onto public java.lang.String com.example.demo.Controller.loginController.userAdd(com.example.demo.entities.User)
+Mapped "{[/user/{id}],methods=[GET]}" onto public java.lang.String com.example.demo.Controller.loginController.updateView(java.lang.Integer,org.springframework.ui.Model)
+Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+Mapped URL path [/crud] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/index.html] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/main.html] onto handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+Adding welcome page: class path resource [public/index.html]
+Registering beans for JMX exposure on startup
+Bean with name 'dataSource' has been autodetected for JMX exposure
+Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.pool:name=dataSource,type=DruidDataSource]
+Starting ProtocolHandler ["http-nio-8080"]
+Using a shared selector for servlet write/read
+Tomcat started on port(s): 8080 (http) with context path '/crud'
+Started DemoRestfulcrudApplication in 3.16 seconds (JVM running for 4.353)
+Initializing Spring FrameworkServlet 'dispatcherServlet'
+FrameworkServlet 'dispatcherServlet': initialization started
+FrameworkServlet 'dispatcherServlet': initialization completed in 15 ms
+{dataSource-1} inited

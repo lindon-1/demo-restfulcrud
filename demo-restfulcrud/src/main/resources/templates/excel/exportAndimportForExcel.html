@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>Dashboard Template for Bootstrap</title>
+		<!-- Bootstrap core CSS -->
+		<link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.1.3/css/bootstrap.css}" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="asserts/css/dashboard.css" th:href="@{/asserts/css/dashboard.css}" rel="stylesheet">
+		<style type="text/css">
+			/* Chart.js */
+			
+			@-webkit-keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+			
+			@keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+			
+			.chartjs-render-monitor {
+				-webkit-animation: chartjs-render-animation 0.001s;
+				animation: chartjs-render-animation 0.001s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--引入抽取的topbar-->
+		<!--模板名：会使用thymeleaf的前后缀配置规则进行解析-->
+		<div th:replace="commons/bar::topbar"></div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<!--引入侧边栏-->
+				<div th:replace="commons/bar::#sidebar(activeUri='importAndExport')"></div>
+
+				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+					<div class="table-responsive">
+						<form id="exportEmpForm"  method="post">
+							<div class="form-group">
+								<label>部门名称</label>
+								<!--提交的是部门的id-->
+								<select class="form-control" name="departmentId" id="departSel">
+									<option  th:value="${dept.id}" th:each="dept:${depts}" th:text="${dept.departmentName}">1</option>
+								</select>
+							</div>
+							<button class="btn btn-sm  exportBtn">导出Excel</button>
+						</form>
+
+
+					</div>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<br/>
+					<div class="table-responsive">
+						<form class="form form-horizontal" id="form-article-add" enctype="multipart/form-data">
+
+							<div class="row cl">
+
+								<label class="form-label col-xs-4 col-sm-2">文件：</label>
+
+								<div class="formControls col-xs-8 col-sm-9">
+									<span class="btn-upload form-group">
+
+									<!--<input class="input-text upload-url" type="text" name="uploadfile" id="uploadfile" readonly nullmsg="请添加附件！" style="width:200px">-->
+
+									<!--<a href="javascript:void();" class="btn btn-primary radius upload-btn"><i class="Hui-iconfont"></i> 浏览文件</a>-->
+
+										<input type="file" multiple name="file" class="input-file" id="file">
+
+									</span>
+								</div>
+
+							</div>
+
+							<div class="row cl">
+
+								<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+
+									<button onClick="importUsers();" class="btn btn-primary radius" type="button"><i class="Hui-iconfont"></i> 导入职工表</button>
+
+									<!--<button onClick="cancel();" class="btn btn-default radius" type="button">  取消  </button>-->
+									<br/>
+									<br/>
+
+								</div>
+
+							</div>
+
+						</form>
+					</div>
+				</main>
+
+			</div>
+
+		</div>
+
+		<!-- Bootstrap core JavaScript
+    ================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js" th:src="@{/webjars/jquery/3.3.1-1/jquery.js}"></script>
+		<script type="text/javascript" src="asserts/js/popper.min.js" th:src="@{/webjars/popper.js/1.11.1/dist/popper.js}"></script>
+		<script type="text/javascript" src="asserts/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.1.3/js/bootstrap.js}"></script>
+
+		<!-- Icons -->
+		<script type="text/javascript" src="asserts/js/feather.min.js" th:src="@{/asserts/js/feather.min.js}"></script>
+		<script>
+			feather.replace()
+		</script>
+		<script>
+            $(".exportBtn").click(function(){
+                var r = confirm("确定导出职工吗？")
+                if(r == true){
+                    //当前员工的
+					var id = document.getElementById( 'departSel' ).value;;
+					// alert(id);
+					var url ="/crud/exportEmp?id="+id;
+                    $("#exportEmpForm").attr("action",url).submit();
+                    return false;
+                }
+            });
+
+
+            /*导入数据*/
+
+            function importUsers(){
+
+                //var clientid = $("#clientid").val();
+
+                var FormDatas=new FormData($("#form-article-add")[0]);
+
+                var fileName=$("#file").val();
+                //alert(fileName);
+
+                if(fileName == '') {
+
+                    layer.msg('请选择文件！',{
+
+                        icon:MSG_CHECK,
+
+                        time:MSG_TIME
+
+                    });
+
+                    return false;
+
+                }
+
+                //验证文件格式
+
+                var fileType = (fileName.substring(fileName.lastIndexOf(".") + 1, fileName.length)).toLowerCase();
+
+                //alert(fileType);
+                if (fileType != 'xls' && fileType !='xlsx') {
+
+                    alert("文件格式不支持！");
+
+                    return false;
+
+                }
+
+                $.ajax({
+
+                    type:'post',
+
+                    url:'/crud/importEmp',
+
+                    async : false,
+
+                    cache : false,
+
+                    contentType : false,
+
+                    processData : false,
+
+                    data:FormDatas,
+
+                    success: function(data){
+                        if(data.msg == "false"){
+
+                            // layer.msg("文件导入失败，请重新上传！", {
+                            //
+                            //     icon: OPER_SB,
+                            //
+                            //     shade: [0.3, '#393D49'], // 透明度  颜色
+                            //
+                            //     time:5000
+                            //
+                            // });
+							alert("文件导入失败，请重新上传！！");
+                            return false;
+
+                        }else{
+
+                            // layer.msg("文件导入成功！", {
+                            //
+                            //     icon: OPER_CG,
+                            //
+                            //     shade: [0.3, '#393D49'], // 透明度  颜色
+                            //
+                            //     time:5000
+                            //
+                            // });
+
+                            alert("文件导入成功!! " );
+                            window.location.reload();
+
+                            return false;
+
+                        }
+
+                    },
+
+                    error : function(data){
+
+                        console.log(data.msg);
+
+                    }
+
+                });
+
+            }
+
+		</script>
+	</body>
+</html>

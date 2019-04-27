@@ -1,0 +1,46 @@
+Unparseable date: "43477.6715277778"
+Unparseable date: "43477.6715277778"
+
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+### The error may involve com.example.demo.Mapper.EmpMapper.addAll-Inline
+### The error occurred while setting parameters
+### SQL: insert into emp(`name`, `email`, `gender`, `bmid`, `birth`) values                         (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+; ]; Column 'name' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+Unparseable date: "43477.6715277778"
+Unparseable date: "43477.6715277778"
+
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+### The error may involve com.example.demo.Mapper.EmpMapper.addAll-Inline
+### The error occurred while setting parameters
+### SQL: insert into emp(`name`, `email`, `gender`, `bmid`, `birth`) values                         (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+; ]; Column 'name' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+Unparseable date: "43477.6715277778"
+Unparseable date: "43477.6715277778"
+
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+### The error may involve com.example.demo.Mapper.EmpMapper.addAll-Inline
+### The error occurred while setting parameters
+### SQL: insert into emp(`name`, `email`, `gender`, `bmid`, `birth`) values                         (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+; ]; Column 'name' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+Unparseable date: "43477.6715277778"
+Unparseable date: "43477.6715277778"
+
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+### The error may involve com.example.demo.Mapper.EmpMapper.addAll-Inline
+### The error occurred while setting parameters
+### SQL: insert into emp(`name`, `email`, `gender`, `bmid`, `birth`) values                         (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)          ,              (?,?,?,?,?)
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+; ]; Column 'name' cannot be null; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Column 'name' cannot be null
+员工 ：sfds没有输入部门名称
+员工 ：sfds没有输入部门名称
+员工 ：sfds没有输入部门名称
+Unparseable date: "43477.6715277778"
+Unparseable date: "43477.6715277778"
+null
+员工 ：121没有输入部门名称
+员工 ：223没有输入部门名称
+员工 ：12345aaaa没有输入部门名称
+员工 ：12345aaaa没有输入部门名称

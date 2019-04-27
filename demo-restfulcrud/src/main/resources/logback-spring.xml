@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration >
+    <appender name="logconsole" class="ch.qos.logback.core.ConsoleAppender">
+        <layout>
+            <pattern>
+               %d -- %msg%n
+            </pattern>
+
+        </layout>
+
+    </appender>
+
+    <appender name="fileInfolog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>
+                %msg%n
+            </pattern>
+        </encoder>
+        <!--滚动策略-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--路径-->
+            <fileNamePattern>E://Code//demo-restfulcrud/logs/info/info.%d.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <appender name="fileErrorlog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--ThresholdFilter 范围过滤-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <encoder>
+            <pattern>
+                %msg%n
+            </pattern>
+        </encoder>
+        <!--滚动策略-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--路径-->
+            <fileNamePattern>E://Code//demo-restfulcrud/logs/error/error.%d.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <root level="info">
+        <appender-ref ref="logconsole"/>
+        <appender-ref ref="fileInfolog"/>
+        <appender-ref ref="fileErrorlog"/>
+    </root>
+</configuration>

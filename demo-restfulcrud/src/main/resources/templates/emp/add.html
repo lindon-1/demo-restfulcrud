@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>Dashboard Template for Bootstrap</title>
+		<!-- Bootstrap core CSS -->
+		<link href="asserts/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/4.1.3/css/bootstrap.css}" rel="stylesheet">
+
+		<!-- Custom styles for this template -->
+		<link href="asserts/css/dashboard.css" th:href="@{/asserts/css/dashboard.css}" rel="stylesheet">
+		<style type="text/css">
+			/* Chart.js */
+			
+			@-webkit-keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+			
+			@keyframes chartjs-render-animation {
+				from {
+					opacity: 0.99
+				}
+				to {
+					opacity: 1
+				}
+			}
+			
+			.chartjs-render-monitor {
+				-webkit-animation: chartjs-render-animation 0.001s;
+				animation: chartjs-render-animation 0.001s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!--引入抽取的topbar-->
+		<!--模板名：会使用thymeleaf的前后缀配置规则进行解析-->
+		<div th:replace="commons/bar::topbar"></div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<!--引入侧边栏-->
+				<div th:replace="commons/bar::#sidebar(activeUri='emps')"></div>
+
+				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+					<!--需要区分是员工修改还是添加；-->
+					<form th:action="@{/emp}" method="post" onsubmit="return check(this)">
+						<!--发送put请求修改员工数据-->
+						<!--
+						1、SpringMVC中配置HiddenHttpMethodFilter;（SpringBoot自动配置好的）
+						2、页面创建一个post表单
+						3、创建一个input项，name="_method";值就是我们指定的请求方式
+						-->
+						<input type="hidden" name="_method" value="put" th:if="${emp!=null}"/>
+						<input type="hidden" name="id" th:if="${emp!=null}" th:value="${emp.id}">
+						<div class="form-group">
+							<label>职工名称</label>
+							<!--placeholder="zhangsan"-->
+							<input name="name" type="text" class="form-control" placeholder="zhangsan" th:value="${emp!=null}?${emp.name}">
+						</div>
+						<div class="form-group">
+							<label>邮箱</label>
+							<!--placeholder="zhangsan@atguigu.com"-->
+							<input name="email" type="email" class="form-control" placeholder="zhangsan@163.com" th:value="${emp!=null}?${emp.email}">
+							<td><span id="username_msg"></span></td>
+
+						</div>
+						<div class="form-group">
+							<label>性别</label><br/>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="gender" value="1" th:checked="${emp!=null}?${emp.gender==1}">
+								<label class="form-check-label">男</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" name="gender" value="0" th:checked="${emp!=null}?${emp.gender==0}">
+								<label class="form-check-label">女</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>部门名称</label>
+							<!--提交的是部门的id-->
+							<select class="form-control" name="departmentId">
+								<option th:selected="${emp!=null}?${dept.id == emp.departmentId}" th:value="${dept.id}" th:each="dept:${depts}" th:text="${dept.departmentName}">1</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label>入职时间</label>
+							<input name="birth" type="text" class="form-control" placeholder="2018-09-09 09:40" th:value="${emp!=null}?${#dates.format(emp.birth, 'yyyy-MM-dd HH:mm')}">
+						</div>
+						<button id = "btnsub" type="submit" class="btn btn-primary" th:text="${emp!=null}?'修改':'添加'">添加</button>
+					</form>
+				</main>
+			</div>
+		</div>
+
+		<!-- Bootstrap core JavaScript
+    ================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script type="text/javascript" src="asserts/js/jquery-3.2.1.slim.min.js" th:src="@{/webjars/jquery/3.3.1-1/jquery.js}"></script>
+		<script type="text/javascript" src="asserts/js/popper.min.js" th:src="@{/webjars/popper.js/1.11.1/dist/popper.js}"></script>
+		<script type="text/javascript" src="asserts/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/4.1.3/js/bootstrap.js}"></script>
+
+		<!-- Icons -->
+		<script type="text/javascript" src="asserts/js/feather.min.js" th:src="@{/asserts/js/feather.min.js}"></script>
+		<script>
+			feather.replace()
+		</script>
+		<!--对员工进行前端校验-->
+		<script type="text/javascript">
+			function check(form) {
+				if(form.name.value==""){
+				    alert("请输入职工名称");
+				    return false;
+				}
+				if(form.email.value==""){
+				    alert("请输入职工邮箱");
+				    return false;
+				}
+				var emailName = form.email.value;
+                var isdead=true;
+                // $.ajax({
+                //     type: "get",
+                //     url: "/crud/checkEmail?email="+emailName,
+                //     async : false,
+                //     success: function (data) {
+                //         if(data.isHead==true){
+                //             alert("该邮箱存在");
+                //             isdead = false;
+                //         }
+                //     },
+                //     error: function () {
+                //         alert("校验失败");
+                //         return false;
+                //     }
+                // });
+                return isdead;
+            }
+
+            // 页面加载事件 .
+            $(function () {
+                // 为用户名输入框绑定失去焦点事件.
+                $("[name='email']").blur(function () {
+                    // 获取用户输入的內容.
+                    var email = $(this).val();
+                    //alert(email);
+                    // 使用ajax , 不刷新页面的情况下 , 发送请求.
+                    $.get("/crud/checkEmail" , "email="+email , function (data) {
+                        // data: 服务器返回的数据.
+                        if (data.isHead==true){
+                            $("#username_msg").html("× 该邮箱已经存在了!").css("color","red");
+                            document.getElementById("btnsub").disabled=true;
+                        }else {
+                            $("#username_msg").html("√ 该邮箱可用!").css("color","green");
+                            document.getElementById("btnsub").disabled=false;
+                        }
+                    })
+                })
+            })
+
+		</script>
+
+	</body>
+
+</html>
