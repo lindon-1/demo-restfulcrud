@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.demo.Mapper.VideoMapper">
+    <resultMap id="VideoMapper" type="com.example.demo.entities.Video">
+        <id column="id" property="id" javaType="int"></id>
+        <result column="name" property="name" javaType="String"></result>
+        <result column="size" property="size" javaType="Long"></result>
+        <result column="filePath" property="filePath" javaType="String"></result>
+        <result column="type" property="type" javaType="String"></result>
+        <result column="uploadTime" property="uploadTime" javaType="Date"></result>
+    </resultMap>
+
+    <select id="selectAll" resultMap="VideoMapper">
+        select * from video
+    </select>
+
+    <insert id="add" >
+        insert into video(name,size,filePath,type,uploadTime) values(#{name},#{size},#{filePath},#{type},#{uploadTime})
+    </insert>
+
+    <select id="findById" resultMap="VideoMapper">
+        select * from video where id = #{id}
+    </select>
+
+
+
+
+
+
+</mapper>
