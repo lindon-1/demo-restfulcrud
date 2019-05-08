@@ -49,6 +49,7 @@ public class VideoServiceImpl implements VideoService {
         }
 
         String fileName = multipartFile.getOriginalFilename().toString();
+        fileName = fileName.substring(fileName.lastIndexOf(File.separator) + 1);
         log.info("fileName : {}", fileName);
         //获取后缀名
         String fileExt = VideoUtils.getFileExt(fileName);
